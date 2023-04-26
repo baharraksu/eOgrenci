@@ -51,7 +51,12 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Lütfen boş alan bırakmayınız!", Toast.LENGTH_SHORT).show();
                 } else {
                     if (db.login(username, password) == 1) {
-                        Toast.makeText(getApplicationContext(), "Giriş Başarısız", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Giriş Başarılı", Toast.LENGTH_SHORT).show();
+                        SharedPreferences sharedPreferences=getSharedPreferences("shared_pref",Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor=sharedPreferences.edit();
+                        editor.putString("username",username);
+                        editor.apply();
+                        startActivity(new Intent(LoginActivity.this,HomeActivity.class));
                     }else{
                         Toast.makeText(getApplicationContext(),"Geçersiz parola ve şifre",Toast.LENGTH_SHORT).show();
                     }
