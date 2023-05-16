@@ -52,13 +52,13 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     if (db.login(username, password) == 1) {
                         Toast.makeText(getApplicationContext(), "Giriş Başarılı", Toast.LENGTH_SHORT).show();
-                        SharedPreferences sharedPreferences=getSharedPreferences("shared_pref",Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor=sharedPreferences.edit();
-                        editor.putString("username",username);
+                        SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("username", username);
                         editor.apply();
-                        startActivity(new Intent(LoginActivity.this,HomeActivity.class));
-                    }else{
-                        Toast.makeText(getApplicationContext(),"Geçersiz parola ve şifre",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Geçersiz parola ve şifre", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
 
