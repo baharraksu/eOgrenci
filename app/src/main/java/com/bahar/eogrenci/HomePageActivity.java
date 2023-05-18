@@ -37,5 +37,19 @@ public class HomePageActivity extends AppCompatActivity {
                 startActivity(new Intent(HomePageActivity.this,TartismaActivity.class));
             }
         });
+        CardView paylasim =findViewById(R.id.cardNotPaylasim);
+        paylasim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomePageActivity.this,PaylasimActivity.class));
+            }
+        });
+        CardView kitapPaylasim =findViewById(R.id.cardKitapPaylasim);
+        kitapPaylasim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomePageActivity.this,KitapPaylasim.class));
+            }
+        });
     }
 }
