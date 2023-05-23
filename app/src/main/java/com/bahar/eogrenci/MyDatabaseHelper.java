@@ -51,9 +51,9 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_PAGES, pages);
         long result = db.insert(TABLE_NAME, null, cv);
         if (result == -1) {
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Ekleme başarısız!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Ekleme başarılı!", Toast.LENGTH_SHORT).show();
         }
     }
     Cursor readAllData(){
